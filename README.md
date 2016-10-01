@@ -16,7 +16,7 @@ If [port] is not specified, the program will default to 6667.
 
 ###NOTES
 
-Jollity is a reasonably full featured and robust irc client for plan 9 that supports most of the original IRC standard (RFC 1459).
+Jollity is a reasonably full featured IRC client for Plan 9 that supports most of the original IRC standard (RFC 1459).
 
 Though the client is robust, there isn't really much support for anything beyond the original RFC 1459 standard, such as DCC or most of CTCP with the singular exception that we do support sending responses to CTCP VERSION requests (vanity).
 
