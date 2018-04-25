@@ -3,76 +3,67 @@
 #include "main.h"
 
 /* strip carriage return from a string */
-
 void stripcr(char *string) {
+    int  i;
 
-	int  i;
+    for (i = 0; i < strlen(string); i++) {
+        if (string[i] == 13) {
+            //string[i] = '\n';
+            //string[i+1] = '\0';
+            string[i] = '\0';
+        }
+    }
 
-	for ( i = 0; i < strlen(string); i++) {
-		if (string[i] == 13) {
-			//string[i] = '\n';
-			//string[i+1] = '\0';
-			string[i] = '\0';
-		}
-	}
-
-	return;
+    return;
 }
 
 /* strip newline from a string */
-
 void stripnl(char *string) {
+    int i;
 
-	int i;
+    for ( i = 0; i < strlen(string); i++) {
+        if (string[i] == '\n') {
+            string[i] = '\0';
+        }
+    }
 
-	for ( i = 0; i < strlen(string); i++) {
-		if (string[i] == '\n') {
-			string[i] = '\0';
-		}
-	}
-
-	return;
+    return;
 }
 
 /* shift a string one character to the left to remove leading colon */
-
 void shiftl(char *string) {
+    int i;
 
-	int i;
+    for ( i = 1; i < strlen(string); i++) {
+        string[i-1] = string[i];
+    }
 
-	for ( i = 1; i < strlen(string); i++) {
-		string[i-1] = string[i];
-	}
+    string[i-1] = '\0';
 
-	string[i-1] = '\0';
-
-	return;
+    return;
 }
 
 /* strip leading and trailing 0x1 from a CTCP string */
-
 void stripctcp(char *string) {
+    int i;
 
-	int i;
+    for (i = 1; i < strlen(string); i++) {
+        string[i-1] = string[i];
+    }
 
-	for ( i = 1; i < strlen(string); i++) {
-		string[i-1] = string[i];
-	}
+    string[i-2] = '\0';
 
-	string[i-2] = '\0';
-
-	return;
+    return;
 }
 
 /* generate a timestamp for messages */
-
 void timestamp(char *stamp) {
+    Tm *ti;
 
-	Tm *ti;
+    ti = localtime(time(0));
 
-	ti = localtime(time(0));
+    sprint(stamp, "%02d:%02d", ti->hour, ti->min);
 
-	sprint(stamp, "%02d:%02d", ti->hour, ti->min);
-
-	return;
+    return;
 }
+
