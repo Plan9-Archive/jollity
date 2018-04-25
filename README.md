@@ -2,19 +2,23 @@ Jollity IRC for Plan 9 v1.1
 ----------------------------------
 Sean Caron scaron@umich.edu
 
-###INSTALLATION
+###   Installation
 
+```
 mk
 
 cp ./jollity /usr/you/bin/yourarch
+```
 
-###USE
+### Usage
 
+```
 ./jollity server nick [port]
+```
 
 If [port] is not specified, the program will default to 6667.
 
-###NOTES
+### Notes
 
 Jollity is a reasonably full featured IRC client for Plan 9 that supports most of the original IRC standard (RFC 1459).
 
@@ -22,7 +26,7 @@ Though the client is robust, there isn't really much support for anything beyond
 
 Jollity intentionally provides a similar user experience to ircII in dumb terminal mode on a UNIX system, with a few command tweaks to suit the preferences of the author.
 
-###TODO
+### TODO
 
 * Implement complete CTCP
 
